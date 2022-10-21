@@ -2,7 +2,7 @@
 
 Denne oppgaven er en innlevering i Algoritmer og Datastrukturer. 
 Oppgaven er levert av følgende student:
-* Navn Navnesen, S123456, s123456@oslomet.no
+* Ingrid Lunde, S338231, s338231@oslomet.no
 
 
 # Oppgavebeskrivelse
