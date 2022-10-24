@@ -130,8 +130,15 @@ public class SBinTre<T> {
     }
 
     public int antall(T verdi) {
+        int antallLike = 0;
+        //Kaster unntak når tabellen er null
+        if (verdi == null) {
+            throw new NullPointerException("Verdien kan ikke være null");
+        }
+        //Lager en for-løkke for å iterere gjennom nodene og sjekker om verdien er der.
 
-        throw new UnsupportedOperationException("Ikke kodet ennå!");
+        //Returnerer hvor mange like verdier det er i treet.
+        return antallLike;
     }
 
     public void nullstill() {
