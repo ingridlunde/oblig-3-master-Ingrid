@@ -165,10 +165,7 @@ public class SBinTre<T> {
     }
 
     private static <T> Node<T> førstePostorden(Node<T> p) {
-
-        if (p == null) throw new NullPointerException(" p kan ikke være null");
-
-        //Objects.requireNonNull(p,"Noden kan ikke ha nullverdi");
+        Objects.requireNonNull(p,"Noden kan ikke ha nullverdi");
 
         while (true) {
             if (p.venstre != null) p = p.venstre;
@@ -179,8 +176,7 @@ public class SBinTre<T> {
 
     private static <T> Node<T> nestePostorden(Node<T> p) {
 
-        if (p == null) throw new NullPointerException("p kan ikke være null");
-        //Objects.requireNonNull(p," Noden kan ikke ha nullverdi");
+        Objects.requireNonNull(p," Noden kan ikke ha nullverdi");
 
         //p.forelder == null sjekker om p er den siste i postorden og er med i denne if-setningen fordi det blir
         // returnert null hvis p.forelder er null.
