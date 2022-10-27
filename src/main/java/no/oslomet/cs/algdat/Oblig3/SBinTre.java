@@ -107,7 +107,7 @@ public class SBinTre<T> {
 
             // p er nå null, dvs. ute av treet, q er den siste vi passerte
 
-            p = new Node<>(verdi, q);                   // oppretter en ny node
+            p = new Node<>(verdi, q);                   // oppretter en ny node med en foreldrereferanse til forrige.
 
             if (q == null) rot = p;                  // p blir rotnode
             else if (cmp < 0) q.venstre = p;         // venstre barn til q
