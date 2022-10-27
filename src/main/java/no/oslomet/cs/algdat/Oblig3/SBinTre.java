@@ -192,11 +192,44 @@ public class SBinTre<T> {
 
 
     public void postorden(Oppgave<? super T> oppgave) {
-        throw new UnsupportedOperationException("Ikke kodet ennå!");
+
+        if (rot == null) return; //treet er tomt
+
+        Node<T> p = rot; //Starter fra roten for å jobbe meg ut til første postorden
+
+        while (true) { //Iterere fra rot til første postorden. (Rot kommer til sist i postorden).
+            if (p.venstre != null) p = p.venstre;
+            else if (p.høyre != null) p = p.høyre;
+            //Braker her fordi vi har kommet til første postorden når den er gått så langt den skal til
+            // venstre og det ikke finnes en høyrenode
+            else break;
+
+            oppgave.utførOppgave(p.verdi); //Oppgaven utføres -- skrive første postorden til skjerm
+
+            while(true) {
+                //Bryter hvis p er lik rot. Det er den siste i postorden.
+                if ( p == rot) break;
+
+                //setter foreldrenoden til p lik f.
+                Node<T> f = p.forelder;
+                if(f != null && (f.venstre != p || f.høyre != null)) {
+                    p = f;
+                }  else p = f.høyre;
+
+                while (true) {
+                    if (p.venstre != null) p = p.venstre;
+                    else if (p.høyre != null) p = p. høyre;
+                    else break;
+                }
+
+            }
+            oppgave.utførOppgave(p.verdi);
+        }
     }
 
+
     public void postordenRecursive(Oppgave<? super T> oppgave) {
-        postordenRecursive(rot, oppgave);
+            throw new UnsupportedOperationException("Ikke kodet ennå!");
     }
 
     private void postordenRecursive(Node<T> p, Oppgave<? super T> oppgave) {
