@@ -16,3 +16,8 @@ compare til å gå til neste i treet. Siden det er et binært søketre vil alle 
 mønster og derfor kan jeg bruke compare til å velge om jeg går til høyre eller venstre. Når jeg møtte en verdi hvor 
 compare gir ==0 betyr det at jeg har funnet en verdi som er lik og øker antallLike. Deretter går jeg videre i treet. 
 
+I oppgave 3 Fant jeg førstePostOrden ved å først sjekke om p.venstre ikke er null. Da går den til venstre for å finne 
+postorden. Slik fortsetter den helt til Den ikke går inn i if-testene. Da er den kommet til første postorden. Tegnet 
+opp for meg selv for å forstå hvordan jeg skulle gjøre det. 
+Brukte litt tid, men klarte tilslutt å forstå hvordan nestePostOrden skulle fungere. Her måtte jeg også tegne for å få 
+det riktig. Hvis p ikke går inn i første if test skal den finne førstePostorden for å få riktig nestePostOrden. 
