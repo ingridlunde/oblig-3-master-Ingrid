@@ -12,11 +12,7 @@ public class SBinTre<T> {
         Integer[] a = {4,7,2,9,4,10,8,7,4,6};
         SBinTre<Integer> tre = new SBinTre<>(Comparator.naturalOrder());
         for (int verdi : a) { tre.leggInn(verdi); }
-        System.out.println(tre.antall());
-        System.out.println(tre.antall(5));
-        System.out.println(tre.antall(4));
-        System.out.println(tre.antall(7));
-        System.out.println(tre.antall(10));
+        //førstePostorden();
 
     }
     private static final class Node<T>   // en indre nodeklasse
@@ -129,14 +125,37 @@ public class SBinTre<T> {
         throw new UnsupportedOperationException("Ikke kodet ennå!");
     }
 
+    //Inspirasjon til løsning fra programkode 5.2.6 b) i kompendiet til Ulf Uttersrud
     public int antall(T verdi) {
-        int antallLike = 0;
-        //Kaster unntak når tabellen er null
-        if (verdi == null) {
-            throw new NullPointerException("Verdien kan ikke være null");
-        }
-        //Lager en for-løkke for å iterere gjennom nodene og sjekker om verdien er der.
+        //Kaster unntak når verdien er null
+        Objects.requireNonNull(verdi, "Ulovlig med nullverdier!");
 
+        //Inistierer den som skal returneres. Setter den til 0.
+        // Den skal returnere 0 om arrayet er tomt.
+        int antallLike = 0;
+
+        //Starter i rotnoden
+        Node<T> p = rot;
+
+
+        //Lager en while-løkke for å iterere gjennom nodene og sjekker om verdien er der. Den går inn i
+        //løkka når p!= null. Er den lik null, er vi i enden av en av grenene
+
+        while (p != null) {
+            //bruker komparator for å iterere gjennom SBtreet.
+            int cmp = comp.compare(verdi, p.verdi);
+
+            // Er verdi > 0 itererer komparatoren videre til høyre.
+            if (cmp < 0) p = p.venstre;
+
+            //er verdi mindre enn p.verdi iterere treet til venstre.
+            else {
+                //Hvis cmp ikke er < eller > er den lik og verdi og p.verdi er like.
+                if (cmp == 0) antallLike++;
+                p = p.høyre;
+            }
+
+        }
         //Returnerer hvor mange like verdier det er i treet.
         return antallLike;
     }
@@ -146,7 +165,7 @@ public class SBinTre<T> {
     }
 
     private static <T> Node<T> førstePostorden(Node<T> p) {
-        throw new UnsupportedOperationException("Ikke kodet ennå!");
+        return null;
     }
 
     private static <T> Node<T> nestePostorden(Node<T> p) {
