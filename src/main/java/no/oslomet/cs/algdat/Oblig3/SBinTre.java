@@ -165,12 +165,35 @@ public class SBinTre<T> {
     }
 
     private static <T> Node<T> førstePostorden(Node<T> p) {
-        return null;
+
+        if (p == null) throw new NullPointerException(" p kan ikke være null");
+
+        //Objects.requireNonNull(p,"Noden kan ikke ha nullverdi");
+
+        while (true) {
+            if (p.venstre != null) p = p.venstre;
+            else if(p.høyre != null) p = p.høyre;
+            else return p;
+        }
     }
 
     private static <T> Node<T> nestePostorden(Node<T> p) {
-        throw new UnsupportedOperationException("Ikke kodet ennå!");
+
+        if (p == null) throw new NullPointerException("p kan ikke være null");
+        //Objects.requireNonNull(p," Noden kan ikke ha nullverdi");
+
+        //p.forelder == null sjekker om p er den siste i postorden og er med i denne if-setningen fordi det blir
+        // returnert null hvis p.forelder er null.
+        // Hvis P.foreldre.høyre == null betyr det at den nestePostorden er p.foreldre.
+
+        if (p.forelder == null || p.forelder.høyre == null || p.forelder.høyre == p)
+            return p.forelder;
+        else {
+            //Hvis p ikke går inn i if testen må den sjekke om nestePostOrden for p.foreldre.høyre.
+            return førstePostorden(p.forelder.høyre);
+        }
     }
+
 
     public void postorden(Oppgave<? super T> oppgave) {
         throw new UnsupportedOperationException("Ikke kodet ennå!");
