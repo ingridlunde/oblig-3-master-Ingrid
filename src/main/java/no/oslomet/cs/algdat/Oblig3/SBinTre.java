@@ -218,7 +218,7 @@ public class SBinTre<T> {
 
     }
 
-    //Hentet inspirasjon fra kompendiet til Ulf Uttersrud programkode 5.1.7
+    //Hentet inspirasjon fra kompendiet til Ulf Uttersrud programkode 5.1.7.
     public void postordenRecursive(Oppgave<? super T> oppgave) {
         if (rot!= null) postorden(oppgave);  // sjekker om treet er tomt
 
