@@ -218,11 +218,13 @@ public class SBinTre<T> {
 
     }
 
+    //Hentet inspirasjon fra kompendiet til Ulf Uttersrud programkode 5.1.7
     public void postordenRecursive(Oppgave<? super T> oppgave) {
         if (rot!= null) postorden(oppgave);  // sjekker om treet er tomt
 
     }
 
+    //Hentet inspirasjon fra kompendiet til Ulf Uttersrud programkode 5.1.7
     private void postordenRecursive(Node<T> p, Oppgave<? super T> oppgave) {
         //Hvis venstre ikke er null. Da kjøres metoden postorden og tar inn oppgave.
         if (p.venstre != null) postordenRecursive(p.venstre, oppgave);

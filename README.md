@@ -27,3 +27,7 @@ whileløkker og mange if-setninger for å forstå hva som skjedde. Deretter bytt
 Her brukte jeg tid på å få inn if(p == null), men når jeg fikk til det kjørte metoden. I postordenRecursive kallet jeg 
 på metoden, men hadde selvsagt kallet på postorden og da kunne jeg ikke ta inn variabelen. Det ble riktig når jeg 
 faktisk kallet på riktig metode. La til oppgave.utførOppgave tilslutt siden det er postorden. 
+
+Litteraturliste
+Uttersrud, U. (2021). Delkapittel 5  –  Binære Trær   –.
+https://www.cs.hioa.no/~ulfu/appolonius/kap5/1/kap51.html#5.1.1
