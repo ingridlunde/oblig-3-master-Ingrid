@@ -21,3 +21,9 @@ postorden. Slik fortsetter den helt til Den ikke går inn i if-testene. Da er de
 opp for meg selv for å forstå hvordan jeg skulle gjøre det. 
 Brukte litt tid, men klarte tilslutt å forstå hvordan nestePostOrden skulle fungere. Her måtte jeg også tegne for å få 
 det riktig. Hvis p ikke går inn i første if test skal den finne førstePostorden for å få riktig nestePostOrden. 
+
+I oppgave 4 brukte jeg mye tid på å skjønen hvordan oppgave skulle implementeres. Først hardkoda eg postorden med 
+whileløkker og mange if-setninger for å forstå hva som skjedde. Deretter bytta jeg det til nestePostorden og whileløkke.
+Her brukte jeg tid på å få inn if(p == null), men når jeg fikk til det kjørte metoden. I postordenRecursive kallet jeg 
+på metoden, men hadde selvsagt kallet på postorden og da kunne jeg ikke ta inn variabelen. Det ble riktig når jeg 
+faktisk kallet på riktig metode. La til oppgave.utførOppgave tilslutt siden det er postorden. 

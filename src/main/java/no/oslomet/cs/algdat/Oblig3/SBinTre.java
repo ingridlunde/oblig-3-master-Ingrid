@@ -207,8 +207,10 @@ public class SBinTre<T> {
         }
         oppgave.utførOppgave(p.verdi);
 
+        //Lager en whileløkke for å kjøre nestepostorden for å få neste og neste
         while(true) {
             p = nestePostorden(p);
+            //Når p er null etter nestePostorden er kjørt bryter den.
             if (p == null) break;
             oppgave.utførOppgave(p.verdi);
 
@@ -216,16 +218,18 @@ public class SBinTre<T> {
 
     }
 
-
-
     public void postordenRecursive(Oppgave<? super T> oppgave) {
         if (rot!= null) postorden(oppgave);  // sjekker om treet er tomt
 
     }
 
     private void postordenRecursive(Node<T> p, Oppgave<? super T> oppgave) {
-        if (p.venstre != null) postorden( oppgave);
-        if (p.høyre != null) postorden( oppgave);
+        //Hvis venstre ikke er null. Da kjøres metoden postorden og tar inn oppgave.
+        if (p.venstre != null) postordenRecursive(p.venstre, oppgave);
+        //Hvis høyre ikke er null. Kjøres metoden postorden og tar inn oppgave.
+        if (p.høyre != null) postordenRecursive( p.høyre, oppgave);
+
+        //Deretter skrives det til skjerm.
         oppgave.utførOppgave(p.verdi);
     }
 
